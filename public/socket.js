@@ -18,3 +18,8 @@ socket.on('server_message', (data)=>{
   console.log('got message from socket server');
   updateOutput(data); // A string
 })
+
+socket.on('disconnect', () => {
+  console.log('Disconnected from socket server');
+  updateOutput("If you're seeing this the server probably went to sleep...zzzz...");
+})
